@@ -1,0 +1,426 @@
+[
+  {
+    "candidate_id": "DEMO_001_PLANET",
+    "timestamp": "2026-06-26T11:08:14.452880Z",
+    "final_decision": "AMBIGUOUS \u2014 FLAGGED FOR HUMAN REVIEW (MEDIUM PRIORITY)",
+    "transit_parameters": {
+      "period_days": 10.0127,
+      "sigma_period_days": 0.05012,
+      "depth_percent": 0.7767,
+      "duration_hours": 0.48,
+      "bls_snr": 7.96
+    },
+    "classification": {
+      "predicted_class": "Planet Transit",
+      "probabilities": {
+        "Planet Transit": 0.7579,
+        "Eclipsing Binary": 0.0418,
+        "Starspot": 0.1669,
+        "Instrumental": 0.0333
+      },
+      "ensemble_agreement": 0.916
+    },
+    "confidence": {
+      "score": 0.6866,
+      "interval": {
+        "lower": 0.5698,
+        "upper": 0.946
+      },
+      "sigma_total": 0.0941,
+      "domain_trust": 1.0,
+      "trust_level": "HIGH"
+    },
+    "ruling_out": {
+      "eclipsing_binary": "No secondary eclipse detected at phase ~0.5. Secondary/primary depth ratio: 0.031 (threshold: 0.5)",
+      "starspot": "Starspot probability low (16.69%). Transit morphology inconsistent with rotational modulation (localized dip, not sinusoidal).",
+      "instrumental": "BLS SNR = 8.0 (>7). Signal significance argues against pure instrumental artifact. Transit consistent across multiple observation windows.",
+      "stellar_blend": "No centroid shift detected during transit. Contamination ratio: 0.90. Transit depth corrected for blending."
+    },
+    "dominant_uncertainty": {
+      "source": "blend",
+      "stage_uncertainties": {
+        "denoise": 0.0003,
+        "blend": 0.1111,
+        "BLS": 0.1116,
+        "classifier": 0.084
+      }
+    },
+    "data_quality": {
+      "Q_data": 0.6952,
+      "flag": "ACCEPTABLE",
+      "n_valid_points": 1440
+    },
+    "blending": {
+      "contamination_ratio": 0.9,
+      "blending_flag": "LOW",
+      "centroid_shift_detected": false
+    },
+    "recommended_followup": [
+      "Standard follow-up photometry recommended."
+    ],
+    "refinement": {
+      "triggered": true,
+      "action": "none",
+      "notes": []
+    },
+    "audit_trail": {
+      "stage_0_quality": {
+        "Q_data": 0.6952,
+        "flag": "ACCEPTABLE"
+      },
+      "stage_1_domain": {
+        "T": 1.0,
+        "sigma_domain": 0.0,
+        "trust_level": "HIGH"
+      },
+      "stage_2_denoise": {
+        "sigma_denoise": 0.0003
+      },
+      "stage_3_blend": {
+        "contamination_ratio": 0.9,
+        "sigma_blend": 0.1111,
+        "blending_flag": "LOW"
+      },
+      "stage_4_detection": {
+        "sigma_BLS": 0.1116
+      },
+      "stage_5_classifier": {
+        "sigma_classifier": 0.084
+      },
+      "stage_6_aggregation": {
+        "sigma_total": 0.0941,
+        "dominant_uncertainty": "blend",
+        "inflation_factors": {
+          "denoise": 1.0,
+          "blend": 1.0,
+          "BLS": 1.0,
+          "classifier": 1.0
+        }
+      },
+      "refinement": {
+        "triggered": true,
+        "action": "none"
+      }
+    },
+    "true_label": "Planet Transit"
+  },
+  {
+    "candidate_id": "DEMO_002_NOISY_BLEND",
+    "timestamp": "2026-06-26T11:08:14.940284Z",
+    "final_decision": "FLAGGED FOR HUMAN REVIEW (LOW CONFIDENCE)",
+    "transit_parameters": {
+      "period_days": 6.9972,
+      "sigma_period_days": 0.03007,
+      "depth_percent": 0.7052,
+      "duration_hours": 0.48,
+      "bls_snr": 4.73
+    },
+    "classification": {
+      "predicted_class": "Planet Transit",
+      "probabilities": {
+        "Planet Transit": 0.6337,
+        "Eclipsing Binary": 0.1196,
+        "Starspot": 0.2016,
+        "Instrumental": 0.0451
+      },
+      "ensemble_agreement": 0.896
+    },
+    "confidence": {
+      "score": 0.4447,
+      "interval": {
+        "lower": 0.0373,
+        "upper": 1.0
+      },
+      "sigma_total": 0.2982,
+      "domain_trust": 0.0,
+      "trust_level": "MINIMAL"
+    },
+    "ruling_out": {
+      "eclipsing_binary": "No secondary eclipse detected at phase ~0.5. Secondary/primary depth ratio: 0.000 (threshold: 0.5)",
+      "starspot": "Moderate starspot probability (20.16%). Cannot fully rule out rotational modulation.",
+      "instrumental": "BLS SNR = 4.7 (low). Cannot confidently rule out instrumental artifact.",
+      "stellar_blend": "No centroid shift detected during transit. Contamination ratio: 0.90. Transit depth corrected for blending."
+    },
+    "dominant_uncertainty": {
+      "source": "classifier",
+      "stage_uncertainties": {
+        "denoise": 0.0062,
+        "blend": 0.15,
+        "BLS": 0.3886,
+        "classifier": 0.4652
+      }
+    },
+    "data_quality": {
+      "Q_data": 0.693,
+      "flag": "ACCEPTABLE",
+      "n_valid_points": 1440
+    },
+    "blending": {
+      "contamination_ratio": 0.9,
+      "blending_flag": "LOW",
+      "centroid_shift_detected": false
+    },
+    "recommended_followup": [
+      "Pipeline operating outside training distribution. Validate results with instrument-specific analysis.",
+      "Radial velocity follow-up to confirm planetary mass and rule out binary."
+    ],
+    "refinement": {
+      "triggered": false,
+      "action": null,
+      "notes": []
+    },
+    "audit_trail": {
+      "stage_0_quality": {
+        "Q_data": 0.693,
+        "flag": "ACCEPTABLE"
+      },
+      "stage_1_domain": {
+        "T": 0.0,
+        "sigma_domain": 1.0,
+        "trust_level": "MINIMAL"
+      },
+      "stage_2_denoise": {
+        "sigma_denoise": 0.0014
+      },
+      "stage_3_blend": {
+        "contamination_ratio": 0.9,
+        "sigma_blend": 0.1111,
+        "blending_flag": "LOW"
+      },
+      "stage_4_detection": {
+        "sigma_BLS": 0.1746
+      },
+      "stage_5_classifier": {
+        "sigma_classifier": 0.1038
+      },
+      "stage_6_aggregation": {
+        "sigma_total": 0.2982,
+        "dominant_uncertainty": "classifier",
+        "inflation_factors": {
+          "denoise": 4.4817,
+          "blend": 1.3499,
+          "BLS": 2.2255,
+          "classifier": 4.4817
+        }
+      },
+      "refinement": {
+        "triggered": false,
+        "action": null
+      }
+    },
+    "true_label": "Planet Transit"
+  },
+  {
+    "candidate_id": "DEMO_003_BINARY",
+    "timestamp": "2026-06-26T11:08:15.404925Z",
+    "final_decision": "FLAGGED FOR HUMAN REVIEW (LOW CONFIDENCE)",
+    "transit_parameters": {
+      "period_days": 2.5005,
+      "sigma_period_days": 0.01503,
+      "depth_percent": 2.3494,
+      "duration_hours": 0.48,
+      "bls_snr": 13.93
+    },
+    "classification": {
+      "predicted_class": "Eclipsing Binary",
+      "probabilities": {
+        "Planet Transit": 0.0234,
+        "Eclipsing Binary": 0.8699,
+        "Starspot": 0.0717,
+        "Instrumental": 0.035
+      },
+      "ensemble_agreement": 0.953
+    },
+    "confidence": {
+      "score": 0.0199,
+      "interval": {
+        "lower": 0.0,
+        "upper": 0.3221
+      },
+      "sigma_total": 0.1494,
+      "domain_trust": 0.0,
+      "trust_level": "MINIMAL"
+    },
+    "ruling_out": {
+      "eclipsing_binary": "No secondary eclipse detected at phase ~0.5. Secondary/primary depth ratio: 0.000 (threshold: 0.5)",
+      "starspot": "Starspot probability low (7.17%). Transit morphology inconsistent with rotational modulation (localized dip, not sinusoidal).",
+      "instrumental": "BLS SNR = 13.9 (>7). Signal significance argues against pure instrumental artifact. Transit consistent across multiple observation windows.",
+      "stellar_blend": "WARNING: Centroid shift detected during transit. Transit may originate from a neighboring star."
+    },
+    "dominant_uncertainty": {
+      "source": "classifier",
+      "stage_uncertainties": {
+        "denoise": 0.0042,
+        "blend": 0.15,
+        "BLS": 0.1491,
+        "classifier": 0.2106
+      }
+    },
+    "data_quality": {
+      "Q_data": 0.6496,
+      "flag": "ACCEPTABLE",
+      "n_valid_points": 1440
+    },
+    "blending": {
+      "contamination_ratio": 0.9,
+      "blending_flag": "LOW",
+      "centroid_shift_detected": true
+    },
+    "recommended_followup": [
+      "Precise astrometric follow-up to identify which star hosts the transit.",
+      "Pipeline operating outside training distribution. Validate results with instrument-specific analysis.",
+      "Radial velocity follow-up to confirm planetary mass and rule out binary."
+    ],
+    "refinement": {
+      "triggered": false,
+      "action": null,
+      "notes": []
+    },
+    "audit_trail": {
+      "stage_0_quality": {
+        "Q_data": 0.6496,
+        "flag": "ACCEPTABLE"
+      },
+      "stage_1_domain": {
+        "T": 0.0,
+        "sigma_domain": 1.0,
+        "trust_level": "MINIMAL"
+      },
+      "stage_2_denoise": {
+        "sigma_denoise": 0.0009
+      },
+      "stage_3_blend": {
+        "contamination_ratio": 0.9,
+        "sigma_blend": 0.1111,
+        "blending_flag": "LOW"
+      },
+      "stage_4_detection": {
+        "sigma_BLS": 0.067
+      },
+      "stage_5_classifier": {
+        "sigma_classifier": 0.047
+      },
+      "stage_6_aggregation": {
+        "sigma_total": 0.1494,
+        "dominant_uncertainty": "classifier",
+        "inflation_factors": {
+          "denoise": 4.4817,
+          "blend": 1.3499,
+          "BLS": 2.2255,
+          "classifier": 4.4817
+        }
+      },
+      "refinement": {
+        "triggered": false,
+        "action": null
+      }
+    },
+    "true_label": "Eclipsing Binary"
+  },
+  {
+    "candidate_id": "DEMO_004_ASTROSAT",
+    "timestamp": "2026-06-26T11:08:16.029727Z",
+    "final_decision": "FLAGGED FOR HUMAN REVIEW (LOW CONFIDENCE)",
+    "transit_parameters": {
+      "period_days": 10.03041,
+      "sigma_period_days": 0.06265,
+      "depth_percent": 1.165,
+      "duration_hours": 0.48,
+      "bls_snr": 8.86
+    },
+    "classification": {
+      "predicted_class": "Planet Transit",
+      "probabilities": {
+        "Planet Transit": 0.3625,
+        "Eclipsing Binary": 0.2264,
+        "Starspot": 0.2793,
+        "Instrumental": 0.1319
+      },
+      "ensemble_agreement": 0.876
+    },
+    "confidence": {
+      "score": 0.2586,
+      "interval": {
+        "lower": 0.0,
+        "upper": 0.9356
+      },
+      "sigma_total": 0.2865,
+      "domain_trust": 0.0,
+      "trust_level": "MINIMAL"
+    },
+    "ruling_out": {
+      "eclipsing_binary": "No secondary eclipse detected at phase ~0.5. Secondary/primary depth ratio: 0.000 (threshold: 0.5)",
+      "starspot": "Moderate starspot probability (27.93%). Cannot fully rule out rotational modulation.",
+      "instrumental": "BLS SNR = 8.9 (>7). Signal significance argues against pure instrumental artifact. Transit consistent across multiple observation windows.",
+      "stellar_blend": "No centroid shift detected during transit. Contamination ratio: 0.90. Transit depth corrected for blending."
+    },
+    "dominant_uncertainty": {
+      "source": "classifier",
+      "stage_uncertainties": {
+        "denoise": 0.0093,
+        "blend": 0.15,
+        "BLS": 0.2257,
+        "classifier": 0.5544
+      }
+    },
+    "data_quality": {
+      "Q_data": 0.5725,
+      "flag": "POOR",
+      "n_valid_points": 5000
+    },
+    "blending": {
+      "contamination_ratio": 0.9,
+      "blending_flag": "LOW",
+      "centroid_shift_detected": false
+    },
+    "recommended_followup": [
+      "Pipeline operating outside training distribution. Validate results with instrument-specific analysis.",
+      "Radial velocity follow-up to confirm planetary mass and rule out binary."
+    ],
+    "refinement": {
+      "triggered": false,
+      "action": null,
+      "notes": []
+    },
+    "audit_trail": {
+      "stage_0_quality": {
+        "Q_data": 0.5725,
+        "flag": "POOR"
+      },
+      "stage_1_domain": {
+        "T": 0.0,
+        "sigma_domain": 1.0,
+        "trust_level": "MINIMAL"
+      },
+      "stage_2_denoise": {
+        "sigma_denoise": 0.0021
+      },
+      "stage_3_blend": {
+        "contamination_ratio": 0.9,
+        "sigma_blend": 0.1111,
+        "blending_flag": "LOW"
+      },
+      "stage_4_detection": {
+        "sigma_BLS": 0.1014
+      },
+      "stage_5_classifier": {
+        "sigma_classifier": 0.1237
+      },
+      "stage_6_aggregation": {
+        "sigma_total": 0.2865,
+        "dominant_uncertainty": "classifier",
+        "inflation_factors": {
+          "denoise": 4.4817,
+          "blend": 1.3499,
+          "BLS": 2.2255,
+          "classifier": 4.4817
+        }
+      },
+      "refinement": {
+        "triggered": false,
+        "action": null
+      }
+    },
+    "true_label": "Planet Transit"
+  }
+]
